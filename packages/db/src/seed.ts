@@ -32,22 +32,6 @@ const [ceo] = await db
   })
   .returning();
 
-const [clawdia] = await db
-  .insert(agents)
-  .values({
-    companyId: company!.id,
-    name: "Clawdia",
-    role: "executive_assistant",
-    title: "Executive Assistant to the CEO",
-    status: "idle",
-    reportsTo: ceo!.id,
-    adapterType: "openclaw",
-    adapterConfig: {},
-    budgetMonthlyCents: 12000,
-    capabilities: "Calendar management, email triage, research, task coordination, meeting prep, travel planning, expense tracking",
-  })
-  .returning();
-
 const [engineer] = await db
   .insert(agents)
   .values({
